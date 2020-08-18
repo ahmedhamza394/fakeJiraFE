@@ -2,6 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Name from "./Name"
+
+const name="Hamza"
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +22,7 @@ function App() {
         >
           Learn React
         </a>
+        <Name />
       </header>
     </div>
   );
