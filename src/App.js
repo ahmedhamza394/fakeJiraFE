@@ -1,28 +1,27 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-import Name from "./Name"
+import Name, {deeSucks} from "./components/Name"
 
 const name="Hamza"
 
 function App() {
+  const [name, setName] = useState("Hamza")
+  
+
+  // useEffect(() => {
+  //   setName( oldName => oldName + "fhwsdihhfdijhfdu")
+  // },[])
+
+  const changeName = (event) => {
+      setName(event.target.value)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Name />
+        <Name name={name} age="65" hobby="being gay" />
+        <input type="text" placeholder="Enter Name here" onChange={changeName}/>
       </header>
     </div>
   );
